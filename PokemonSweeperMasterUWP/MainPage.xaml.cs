@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PokemonSweeperMasterUWP.Game;
+using PokemonSweeperMasterUWP.Game.Field;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,7 +26,7 @@ namespace PokemonSweeperMasterUWP
     {
         public MainPage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             Game = new PokeSweepGame();
         }
 
@@ -35,7 +37,7 @@ namespace PokemonSweeperMasterUWP
             Game.NewField(this);
         }
 
-        public void MineSquare_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        public void MineSquare_MouseRightButtonDown(object sender, RightTappedRoutedEventArgs e)
         {
             ((Square)sender).RightButton(this);
         }
@@ -47,7 +49,7 @@ namespace PokemonSweeperMasterUWP
 
         public void MinesLeftLabel(int count)
         {
-            MinesLeft.Content = "Pokebals: " + count;
+            MinesLeft.Text = "Pokeballs: " + count;
         }
     }
 }

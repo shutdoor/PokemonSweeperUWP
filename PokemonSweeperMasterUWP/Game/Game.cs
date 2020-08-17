@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PokemonSweeperMasterUWP.Game.Field;
 
 namespace PokemonSweeperMasterUWP.Game
 {
@@ -31,7 +32,7 @@ namespace PokemonSweeperMasterUWP.Game
         public int Score { get; set; }
         public List<Pokemon.Pokemon> Pokemon { get; set; }
         public int Level { get; set; }
-        public Field Field { get; set; }
+        public Field.Field Field { get; set; }
         // Calculate the score gained after finishing a field.
         public int CalculateNewScore(Stopwatch timer, int clicks, List<Pokemon.Pokemon> pokemon)
         {
@@ -46,7 +47,7 @@ namespace PokemonSweeperMasterUWP.Game
             return newScore;
         }
 
-        public void NewField(GameWindow window)
+        public void NewField(MainPage window)
         {
             window.MineFieldGrid.Children.Clear();
 
@@ -55,14 +56,14 @@ namespace PokemonSweeperMasterUWP.Game
             window.MineFieldGrid.Columns = FieldLevels[Level].Columns;
             window.Width = 600 * FieldLevels[Level].Columns / FieldLevels[Level].Rows;
             window.MineFieldGrid.Width = 500 * FieldLevels[Level].Columns / FieldLevels[Level].Rows;
-            Field = new Field(FieldLevels[Level].Rows, FieldLevels[Level].Columns,
+            Field = new Field.Field(FieldLevels[Level].Rows, FieldLevels[Level].Columns,
                 FieldLevels[Level].Pokemon,
                 FieldLevels[Level].Open, window);
 
             foreach (var square in Field.Squares)
             {
                 square.Click += window.MineSquare_Click;
-                square.MouseRightButtonDown += window.MineSquare_MouseRightButtonDown;
+                square.RightTapped += window.MineSquare_MouseRightButtonDown;
                 window.MineFieldGrid.Children.Add(square);
             }
             window.MinesLeftLabel(FieldLevels[Level].Pokemon);

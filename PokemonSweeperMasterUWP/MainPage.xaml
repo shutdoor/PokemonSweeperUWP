@@ -7,9 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Name="MineFieldGrid">
+        <TextBlock Name="MinesLeft"></TextBlock>
+    </Grid>
 
-    <DockPanel Margin="0,0,2,1">
+    <!--<DockPanel Margin="0,0,2,1">
         <UniformGrid x:Name="MineFieldGrid" Columns="9" Rows="9" Height="500" Width="500" DockPanel.Dock="Top"/>
         <Label Name="MinesLeft" Content="" Height="44" VerticalAlignment="Top" Width="104" HorizontalAlignment="Left" Margin="20"/>
-    </DockPanel>
+    </DockPanel>-->
 </Page>

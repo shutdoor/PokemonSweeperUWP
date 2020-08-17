@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PokemonSweeperMasterUWP.Game.Pokemon;
 
 namespace PokemonSweeperMasterUWP.Game.Field
 {
@@ -12,7 +13,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
         private readonly Random Random = new Random();
         public Stopwatch Timer;
 
-        public Field(int rows, int columns, int nrOfPokemon, int openSquares, GameWindow window)
+        public Field(int rows, int columns, int nrOfPokemon, int openSquares, MainPage window)
         {
             Rows = rows;
             Columns = columns;
@@ -32,7 +33,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
 
         public int NrOfClicks { get; set; }
 
-        private void PopulateField(int nrOfPokemon, int openSquares, GameWindow window)
+        private void PopulateField(int nrOfPokemon, int openSquares, MainPage window)
         {
             var pokemonPlacers = new List<int>();
 
@@ -54,9 +55,9 @@ namespace PokemonSweeperMasterUWP.Game.Field
                     Squares.Add(new Square(this, Rows, Columns, row, column));
                     if (pokemonPlacers.Contains(Squares.Count - 1))
                     {
-                        Squares[Squares.Count - 1].Pokemon = new Pokemon
+                        Squares[Squares.Count - 1].Pokemon = new Pokemon.Pokemon
                         {
-                            Type = (PokemonList)Random.Next(1, 386)
+                            Type = (Pokemon.PokemonList)Random.Next(1, 386)
                         };
                     }
                 }

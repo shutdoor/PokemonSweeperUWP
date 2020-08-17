@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI;
+using Windows.UI.Text;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Documents;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace PokemonSweeperMasterUWP.Game.Field
 {
@@ -40,7 +46,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
         }
 
         public Field Field { get; set; }
-        public Pokemon Pokemon { get; set; }
+        public Pokemon.Pokemon Pokemon { get; set; }
 
         public int Mines
         {
@@ -58,7 +64,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
             }
         }
 
-        public void RightButton(GameWindow sender)
+        public void RightButton(MainPage sender)
         {
             List<Square> FlaggedSquares;
             if (Status == SquareStatus.Open)
@@ -77,14 +83,14 @@ namespace PokemonSweeperMasterUWP.Game.Field
                             win = false;
                         }
                     }
-                    if (win) Score.ShowScore(sender, Field);
+                    //if (win) Score.ShowScore(sender, Field);
                 }
             }
             else if (Status == SquareStatus.Flagged)
             {
                 Status = SquareStatus.Question;
                 Content = "?";
-                Foreground = Brushes.Blue;
+                Foreground = new SolidColorBrush(Colors.Blue);
                 FontWeight = FontWeights.Bold;
                 FlaggedSquares = Field.Squares.Where(square => square.Status == SquareStatus.Flagged).ToList();
                 sender.MinesLeftLabel(sender.Game.FieldLevels[sender.Game.Level].Pokemon - FlaggedSquares.Count());
@@ -93,46 +99,46 @@ namespace PokemonSweeperMasterUWP.Game.Field
             {
                 Status = SquareStatus.Open;
                 Content = "";
-                Foreground = Brushes.Gray;
+                Foreground = new SolidColorBrush(Colors.Gray);
                 FontWeight = FontWeights.Normal;
             }
 
         }
 
-        public void LeftButton(GameWindow window)
+        public void LeftButton(MainPage window)
         {
             if (Status == SquareStatus.Open)
             {
                 SwipeSquare(window);
-                if (Field.ClearedSquares + window.Game.FieldLevels[window.Game.Level].Pokemon ==
-                    window.Game.FieldLevels[window.Game.Level].Dimention) Score.ShowScore(window, Field);
+                //if (Field.ClearedSquares + window.Game.FieldLevels[window.Game.Level].Pokemon ==
+                //    window.Game.FieldLevels[window.Game.Level].Dimention) Score.ShowScore(window, Field);
             }
         }
 
-        public void SwipeSquare(GameWindow window)
+        public void SwipeSquare(MainPage window)
         {
             Field.NrOfClicks++;
             if (Pokemon != null)
             {
                 Content = new Image { Source = Pokemon.Picture };
                 Status = SquareStatus.Pokemon;
-                Background = Brushes.Red;
-                BorderBrush = Brushes.Red;
+                Background = new SolidColorBrush(Colors.Red);
+                BorderBrush = new SolidColorBrush(Colors.Red);
                 IsEnabled = false;
-                FailMessage.ShowMessage(window, Pokemon);
+                //FailMessage.ShowMessage(window, Pokemon);
             }
             else if (Mines > 0)
             {
                 Content = Mines;
                 Status = SquareStatus.Cleared;
-                Background = Brushes.White;
-                BorderBrush = Brushes.White;
+                Background = new SolidColorBrush(Colors.White);
+                BorderBrush = new SolidColorBrush(Colors.White);
                 IsEnabled = false;
             }
             else
             {
-                Background = Brushes.White;
-                BorderBrush = Brushes.White;
+                Background = new SolidColorBrush(Colors.White);
+                BorderBrush = new SolidColorBrush(Colors.White);
                 Status = SquareStatus.Cleared;
                 IsEnabled = false;
                 foreach (var OtherSquare in (Field.Squares.Where
