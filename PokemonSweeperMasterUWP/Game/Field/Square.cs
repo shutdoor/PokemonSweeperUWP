@@ -64,13 +64,22 @@ namespace PokemonSweeperMasterUWP.Game.Field
             }
         }
 
-        public void RightButton(MainPage sender)
+        public void RightButton(MainPage sender, Square clickedElement)
         {
             List<Square> FlaggedSquares;
             if (Status == SquareStatus.Open)
             {
                 Status = SquareStatus.Flagged;
-                Content = new Image { Source = new BitmapImage(new Uri(@"/Game/images/pokeball.png", UriKind.Relative)) };
+
+                Image img = new Image();
+                BitmapImage bitImage = new BitmapImage();
+                Uri uri = new Uri("ms-appx:///Assets//Game Icons/pokeball.png");
+                bitImage.UriSource = uri;
+                img.Source = bitImage;
+
+                clickedElement.Content = img;
+                //Content = new Image { Source = new BitmapImage(new Uri(@"/Game/images/pokeball.png", UriKind.Relative)) };
+
                 FlaggedSquares = Field.Squares.Where(square => square.Status == SquareStatus.Flagged).ToList();
                 sender.MinesLeftLabel(sender.Game.FieldLevels[sender.Game.Level].Pokemon - FlaggedSquares.Count());
                 if (FlaggedSquares.Count() == sender.Game.FieldLevels[sender.Game.Level].Pokemon)
@@ -83,7 +92,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
                             win = false;
                         }
                     }
-                    //if (win) Score.ShowScore(sender, Field);
+                    //if (win) Score.ShowScore(sender, Field); //If the winned, we need to send them to a win page.
                 }
             }
             else if (Status == SquareStatus.Flagged)

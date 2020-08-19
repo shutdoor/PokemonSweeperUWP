@@ -31,15 +31,41 @@ namespace PokemonSweeperMasterUWP
         }
 
         public PokeSweepGame Game { get; set; }
+        public void MineSquare_MouseRightButtonDown(object sender, RightTappedRoutedEventArgs e)
+        {
+            ((Square)sender).RightButton(this, sender as Square);
+        }
+
+        public void MineSquare_Click(object sender, TappedRoutedEventArgs e)
+        {
+            ((Square)sender).LeftButton(this);
+        }
+
+
+        //TappedRoutedEventArgs
+        #region Flyouts
+
+        //On Lose Show This FlyOut
+        public void showLossFlyOut(int pokemonNumber)
+        {
+            EscapedPokemon.Source = getPokemonImageForFlyOut(pokemonNumber);
+            textBoxContentFlyOut.Text = $"Sadly {(PokemonEnumList)pokemonNumber} - {pokemonNumber} Escaped.";
+            innerStackPanelButton.Content = "Retry";
+            innerStackPanelButton.Tapped += InnerStackPanelLossButton_Tapped;
+            FlyoutBase.ShowAttachedFlyout(MineFieldGrid);
+        }
+        public void showLevelWinFlyOut()
+        {
+            EscapedPokemon.Source = getPokeballImage();
+            textBoxContentFlyOut.Text = $"Well done!\nYou have caught all the Pokemon";
+            innerStackPanelButton.Content = "Continue";
+            innerStackPanelButton.Tapped += InnerStackPanelLevelWinButton_Tapped;
+            FlyoutBase.ShowAttachedFlyout(MineFieldGrid);
+        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Game.NewField(this);
-        }
-
-        public void MineSquare_MouseRightButtonDown(object sender, RightTappedRoutedEventArgs e)
-        {
-            ((Square)sender).RightButton(this);
         }
 
         public void MineSquare_Click(object sender, RoutedEventArgs e)
