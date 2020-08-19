@@ -71,7 +71,8 @@ namespace PokemonSweeperMasterUWP
 
         private void InnerStackPanelLossButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Game = new PokeSweepGame();
+            Game.NewField(this);
         }
 
         private void InnerStackPanelLevelWinButton_Tapped(object sender, TappedRoutedEventArgs e)

@@ -92,7 +92,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
                             win = false;
                         }
                     }
-                    //if (win) Score.ShowScore(sender, Field); //If the winned, we need to send them to a win page.
+                    if (win) sender.showLevelWinFlyOut(); //If the winned, we need to send them to a win page.
                 }
             }
             else if (Status == SquareStatus.Flagged)
@@ -134,6 +134,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 Background = new SolidColorBrush(Colors.Red);
                 BorderBrush = new SolidColorBrush(Colors.Red);
                 IsEnabled = false;
+                window.showLossFlyOut(Pokemon.Number);
                 //FailMessage.ShowMessage(window, Pokemon);
             }
             else if (Mines > 0)

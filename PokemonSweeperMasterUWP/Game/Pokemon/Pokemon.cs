@@ -36,7 +36,7 @@ namespace PokemonSweeperMasterUWP.Game.Pokemon
                 }
 
                 BitmapImage bitImage = new BitmapImage();
-                Uri uri = new Uri($"ms-app:///Assets/Pokemon/{number}.png");
+                Uri uri = new Uri($"ms-appx:///Assets/Pokemon/{number}.png");
                 bitImage.UriSource = uri;
 
                 return bitImage;
