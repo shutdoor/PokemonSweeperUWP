@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PokemonSweeperMasterUWP.Game.Field;
+using Windows.UI.Xaml.Controls;
 
 namespace PokemonSweeperMasterUWP.Game
 {
@@ -14,7 +15,6 @@ namespace PokemonSweeperMasterUWP.Game
         public PokeSweepGame()
         {
             Level = 0;
-            Score = 0;
             Pokemon = new List<Pokemon.Pokemon>(); // make empty list of Pokemon captured
 
             FieldLevels = new List<FieldLevel>(); // Make list of Game Levels
@@ -29,44 +29,45 @@ namespace PokemonSweeperMasterUWP.Game
         }
 
         public List<FieldLevel> FieldLevels { get; set; }
-        public int Score { get; set; }
         public List<Pokemon.Pokemon> Pokemon { get; set; }
         public int Level { get; set; }
         public Field.Field Field { get; set; }
-        // Calculate the score gained after finishing a field.
-        public int CalculateNewScore(Stopwatch timer, int clicks, List<Pokemon.Pokemon> pokemon)
-        {
-            // count the number of new (never before) catched pokemon.
-            var newPokemon = 0;
-            foreach (var monster in pokemon.Where(m => !Pokemon.Contains(m))) newPokemon++;
-
-            // Calculate the score and add it to the old score
-            var newScore = (int)((newPokemon * 100 + (100 - clicks) / (timer.Elapsed.TotalSeconds / 2)));
-            Score += newScore;
-            // Return the field-score
-            return newScore;
-        }
 
         public void NewField(MainPage window)
         {
             window.MineFieldGrid.Children.Clear();
 
-            for (var i = Level; Score >= FieldLevels[i].NextLevel && i <= FieldLevels.Count(); i++) Level++;
-            window.MineFieldGrid.Rows = FieldLevels[Level].Rows;
-            window.MineFieldGrid.Columns = FieldLevels[Level].Columns;
-            window.Width = 600 * FieldLevels[Level].Columns / FieldLevels[Level].Rows;
-            window.MineFieldGrid.Width = 500 * FieldLevels[Level].Columns / FieldLevels[Level].Rows;
+            RowDefinition rowDef;
+            ColumnDefinition colDef;
+
+            for(int i = 0; i < FieldLevels[this.Level].Rows; i++)
+            {
+                rowDef = new RowDefinition();
+                window.MineFieldGrid.RowDefinitions.Add(rowDef);
+            }
+
+            for (int i = 0; i < FieldLevels[this.Level].Columns; i++)
+            {
+                colDef = new ColumnDefinition();
+                window.MineFieldGrid.ColumnDefinitions.Add(colDef);
+            }
+
             Field = new Field.Field(FieldLevels[Level].Rows, FieldLevels[Level].Columns,
                 FieldLevels[Level].Pokemon,
                 FieldLevels[Level].Open, window);
 
             foreach (var square in Field.Squares)
             {
-                square.Click += window.MineSquare_Click;
+                square.Tapped += window.MineSquare_Click;
                 square.RightTapped += window.MineSquare_MouseRightButtonDown;
+                square.Width = 60;
+                square.Height = 60;
                 window.MineFieldGrid.Children.Add(square);
+                Grid.SetRow(square, square.Row);
+                Grid.SetColumn(square, square.Column);
+                //square.Content = $"{square.Row}, {square.Column}";
             }
-            window.MinesLeftLabel(FieldLevels[Level].Pokemon);
+            window.MinesLeftLabel.Text = $"{FieldLevels[Level].Pokemon}";
         }
     }
 }

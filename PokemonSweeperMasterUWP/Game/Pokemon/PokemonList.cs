@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PokemonSweeperMasterUWP.Game.Pokemon
 {
-    public enum PokemonList
+    public enum PokemonEnumList
     {
         Bulbasaur = 1,
         Ivysaur = 2,
