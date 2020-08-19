@@ -18,7 +18,6 @@ namespace PokemonSweeperMasterUWP.Game.Field
             Rows = rows;
             Columns = columns;
             PopulateField(nrOfPokemon, openSquares, window);
-            Timer = Stopwatch.StartNew();
             NrOfClicks = 0;
         }
 
@@ -57,7 +56,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
                     {
                         Squares[Squares.Count - 1].Pokemon = new Pokemon.Pokemon
                         {
-                            Type = (Pokemon.PokemonList)Random.Next(1, 386)
+                            Type = (PokemonEnumList)Random.Next(1, 386)
                         };
                     }
                 }

@@ -9,7 +9,7 @@ namespace PokemonSweeperMasterUWP.Game.Pokemon
 {
     public class Pokemon
     {
-        public PokemonList Type { get; set; }
+        public PokemonEnumList Type { get; set; }
 
         public int Number
         {
@@ -18,7 +18,7 @@ namespace PokemonSweeperMasterUWP.Game.Pokemon
 
         public string Name
         {
-            get { return Type.ToString(); }
+            get { return $"{(PokemonEnumList)Number}"; }
         }
 
         public BitmapImage Picture
@@ -34,7 +34,12 @@ namespace PokemonSweeperMasterUWP.Game.Pokemon
                     }
                     number = "0" + number;
                 }
-                return new BitmapImage(new Uri(@"/Game/images/pokemon/" + number + ".png", UriKind.Relative));
+
+                BitmapImage bitImage = new BitmapImage();
+                Uri uri = new Uri($"ms-app:///Assets/Pokemon/{number}.png");
+                bitImage.UriSource = uri;
+
+                return bitImage;
             }
         }
     }
