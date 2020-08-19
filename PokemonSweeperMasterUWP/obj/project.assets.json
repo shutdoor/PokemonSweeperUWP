@@ -3790,7 +3790,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.0": {
-      "sha512": "ok+RPAtESz/9MUXeIEz6Lv5XAGQsaNmEYXMsgVALj4D7kqC8gveKWXWXbufLySR2fWrwZf8smyN5RmHu0e4BHA==",
+      "sha512": "GmkKfoyerqmsHMn7OZj0AKpcBabD+GaafqphvX2Mw406IwiJRy1pKcKqdCfKJfYmkRyJ6+e+RaUylgdJoDa1jQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.1.0",
       "files": [
@@ -8151,24 +8151,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kathy Broderick\\.nuget\\packages\\": {},
+    "C:\\Users\\Zane\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kathy Broderick\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
+      "projectUniqueName": "C:\\Users\\Zane\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
       "projectName": "PokemonSweeperMasterUWP",
-      "projectPath": "C:\\Users\\Kathy Broderick\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
-      "packagesPath": "C:\\Users\\Kathy Broderick\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kathy Broderick\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\obj\\",
+      "projectPath": "C:\\Users\\Zane\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
+      "packagesPath": "C:\\Users\\Zane\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Zane\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Kathy Broderick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Zane\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

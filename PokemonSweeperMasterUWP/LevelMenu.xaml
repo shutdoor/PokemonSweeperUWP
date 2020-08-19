@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="PokemonSweeperMasterUWP.LevelMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PokemonSweeperMasterUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button Name="Level1Button" Content="Level 1" Margin="0,326,0,0" VerticalAlignment="Top" Height="88" Width="152" HorizontalAlignment="Center" Click="Level1Button_Click" />
+        <Button Name="Level2Button" Content="Level 2" Height="88" Width="152" HorizontalAlignment="Center" Click="Level2Button_Click"/>
+        <Button Name="Level3Button" Content="Level 3" Height="88" Width="152" HorizontalAlignment="Center" Margin="0,609,0,0" VerticalAlignment="Top" Click="Level3Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="617,64,0,0" FontSize="100px" Text="Levels" TextWrapping="Wrap" VerticalAlignment="Top" Height="146" Width="287"/>
+
+    </Grid>
+</Page>

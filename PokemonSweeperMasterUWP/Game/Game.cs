@@ -19,13 +19,11 @@ namespace PokemonSweeperMasterUWP.Game
 
             FieldLevels = new List<FieldLevel>(); // Make list of Game Levels
             // ------------------------
-            FieldLevels.Add(new FieldLevel { Rows = 9, Columns = 9, Pokemon = 10, NextLevel = 1000 });
+            FieldLevels.Add(new FieldLevel { Rows = 10, Columns = 10, Pokemon = 10, NextLevel = 1000 });
             // Beginner standard minesweeper
-            FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 16, Pokemon = 40, NextLevel = 10000 });
+            FieldLevels.Add(new FieldLevel { Rows = 40, Columns = 40, Pokemon = 40, NextLevel = 10000 });
             // Intermediate standard minesweeper
-            FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 32, Pokemon = 99, NextLevel = 20000 });
-            // Expert standard minesweeper
-            FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 16, Pokemon = 70, NextLevel = 99999999, Open = 50 });
+            FieldLevels.Add(new FieldLevel { Rows = 99, Columns = 99, Pokemon = 99, NextLevel = 20000 });
         }
 
         public List<FieldLevel> FieldLevels { get; set; }
