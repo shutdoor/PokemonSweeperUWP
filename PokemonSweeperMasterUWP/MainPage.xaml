@@ -24,8 +24,7 @@
         
         <Grid Name="MineFieldGrid"
             x:FieldModifier="public"
-            Grid.Row="2"
-              Width="600">
+            Grid.Row="2">
             
             <FlyoutBase.AttachedFlyout>
                 <Flyout>

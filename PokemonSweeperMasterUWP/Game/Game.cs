@@ -34,6 +34,8 @@ namespace PokemonSweeperMasterUWP.Game
         public void NewField(MainPage window)
         {
             window.MineFieldGrid.Children.Clear();
+            window.MineFieldGrid.RowDefinitions.Clear();
+            window.MineFieldGrid.ColumnDefinitions.Clear();
 
             RowDefinition rowDef;
             ColumnDefinition colDef;
@@ -58,8 +60,8 @@ namespace PokemonSweeperMasterUWP.Game
             {
                 square.Tapped += window.MineSquare_Click;
                 square.RightTapped += window.MineSquare_MouseRightButtonDown;
-                square.Width = 60;
-                square.Height = 60;
+                square.Width = 70;
+                square.Height = 70;
                 window.MineFieldGrid.Children.Add(square);
                 Grid.SetRow(square, square.Row);
                 Grid.SetColumn(square, square.Column);

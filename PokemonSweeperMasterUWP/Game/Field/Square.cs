@@ -98,8 +98,13 @@ namespace PokemonSweeperMasterUWP.Game.Field
             else if (Status == SquareStatus.Flagged)
             {
                 Status = SquareStatus.Question;
-                Content = "?";
-                Foreground = new SolidColorBrush(Colors.Blue);
+                Image img = new Image();
+                BitmapImage bitImage = new BitmapImage();
+                Uri uri = new Uri("ms-appx:///Assets//Game Icons/masterball.png");
+                bitImage.UriSource = uri;
+                img.Source = bitImage;
+
+                clickedElement.Content = img;
                 FontWeight = FontWeights.Bold;
                 FlaggedSquares = Field.Squares.Where(square => square.Status == SquareStatus.Flagged).ToList();
                 sender.MinesLeftLabel.Text = $"{sender.Game.FieldLevels[sender.Game.Level].Pokemon - FlaggedSquares.Count()}";
