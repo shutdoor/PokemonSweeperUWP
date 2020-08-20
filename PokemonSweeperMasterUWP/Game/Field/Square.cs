@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI;
 using Windows.UI.Text;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Media;
@@ -127,6 +128,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 //if (Field.ClearedSquares + window.Game.FieldLevels[window.Game.Level].Pokemon ==
                 //    window.Game.FieldLevels[window.Game.Level].Dimention) Score.ShowScore(window, Field);
             }
+            Console.WriteLine("Kill my headache.");
         }
 
         public void SwipeSquare(MainPage window)
@@ -138,7 +140,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 Status = SquareStatus.Pokemon;
                 Background = new SolidColorBrush(Colors.Red);
                 BorderBrush = new SolidColorBrush(Colors.Red);
-                IsEnabled = false;
+                //IsEnabled = false;
                 window.showLossFlyOut(Pokemon.Number);
                 //FailMessage.ShowMessage(window, Pokemon);
             }
@@ -148,18 +150,21 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 Status = SquareStatus.Cleared;
                 Background = new SolidColorBrush(Colors.White);
                 BorderBrush = new SolidColorBrush(Colors.White);
-                IsEnabled = false;
+                //IsEnabled = false;
             }
             else
             {
-                Background = new SolidColorBrush(Colors.White);
-                BorderBrush = new SolidColorBrush(Colors.White);
+                Content = "";
                 Status = SquareStatus.Cleared;
-                IsEnabled = false;
-                foreach (var OtherSquare in (Field.Squares.Where
+                //IsEnabled = false;
+                this.Background = new SolidColorBrush(Color.FromArgb(100, 103, 103, 103));
+                BorderBrush = new SolidColorBrush(Colors.Black);
+                BorderThickness = new Thickness(10);
+                List<Square> SurroundingSquares = Field.Squares.Where
                     (s => (s.Row >= Row - 1) && (s.Row <= Row + 1) &&
                           (s.Column >= Column - 1) && (s.Column <= Column + 1) && (s.Status == SquareStatus.Open))
-                    .ToList()))
+                    .ToList();
+                foreach (var OtherSquare in SurroundingSquares)
                     OtherSquare.SwipeSquare(window);
             }
         }

@@ -10,6 +10,12 @@
     Width="800"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <!--<Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Green"/>
+        </Style>
+    </Page.Resources>-->
+
     <Grid Margin="0,0,2,1"
           Name="windowGrid">
         <Grid.RowDefinitions>
