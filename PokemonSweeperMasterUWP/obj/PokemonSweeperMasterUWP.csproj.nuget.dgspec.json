@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dwight\\Source\\Repos\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj": {}
+    "C:\\Users\\Zane\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dwight\\Source\\Repos\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj": {
+    "C:\\Users\\Zane\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dwight\\Source\\Repos\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
+        "projectUniqueName": "C:\\Users\\Zane\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
         "projectName": "PokemonSweeperMasterUWP",
-        "projectPath": "C:\\Users\\dwight\\Source\\Repos\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
-        "packagesPath": "C:\\Users\\dwight\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dwight\\Source\\Repos\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\obj\\",
+        "projectPath": "C:\\Users\\Zane\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
+        "packagesPath": "C:\\Users\\Zane\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Zane\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\dwight\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Zane\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

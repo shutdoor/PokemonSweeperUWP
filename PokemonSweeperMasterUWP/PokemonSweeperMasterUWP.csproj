@@ -125,6 +125,15 @@
     <Compile Include="Game\Game.cs" />
     <Compile Include="Game\Pokemon\Pokemon.cs" />
     <Compile Include="Game\Pokemon\PokemonList.cs" />
+    <Compile Include="LanguageMenu.xaml.cs">
+      <DependentUpon>LanguageMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LevelMenu.xaml.cs">
+      <DependentUpon>LevelMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -567,6 +576,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="LanguageMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LevelMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
