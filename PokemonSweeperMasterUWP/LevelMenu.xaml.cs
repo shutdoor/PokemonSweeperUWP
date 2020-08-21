@@ -41,5 +41,10 @@ namespace PokemonSweeperMasterUWP
         {
 
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainMenu));
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,21 @@ namespace PokemonSweeperMasterUWP
         public MainMenu()
         {
             this.InitializeComponent();
+        }
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(LevelMenu));
+        }
+
+        private void LanguageButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(LanguageMenu));
+        }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            CoreApplication.Exit();
         }
     }
 }

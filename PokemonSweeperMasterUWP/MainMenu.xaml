@@ -9,9 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="Start" Margin="0,284,0,0" VerticalAlignment="Top" Height="108" Width="203" HorizontalAlignment="Center"/>
-        <Button Content="Quit" Margin="0,641,0,0" VerticalAlignment="Top" Height="108" Width="203" HorizontalAlignment="Center"/>
-        <Button Content="Languages" Height="108" Width="203" HorizontalAlignment="Center"/>
+        <Button Name="StartButton" Content="Start" Margin="0,260,0,0" VerticalAlignment="Top" Height="108" Width="203" HorizontalAlignment="Center" Click="StartButton_Click" />
+        <Button Name="QuitButton" Content="Quit" Margin="0,674,0,0" VerticalAlignment="Top" Height="108" Width="203" HorizontalAlignment="Center" Click="QuitButton_Click"/>
+        <Button Name="LanguageButton" Content="Languages" Height="108" Width="203" HorizontalAlignment="Center" Click="LanguageButton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="356,10,0,0" Text="PokemonSweeper" FontSize="100px" TextWrapping="Wrap" VerticalAlignment="Top" Height="190" Width="819"/>
 
     </Grid>
