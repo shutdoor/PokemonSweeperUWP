@@ -9,7 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ComboBox Margin="0,326,0,0" Width="294" Height="79" HorizontalAlignment="Center"/>
+        <ComboBox Margin="0,326,0,0" Width="294" Height="79" HorizontalAlignment="Center">
+            <x:String>English</x:String>
+            <x:String>German</x:String>
+        </ComboBox>
         <Button Name="SaveChangesButton" Content="Save Changes" Margin="0,500,0,0" VerticalAlignment="Top" Height="82" Width="154" HorizontalAlignment="Center" Click="SaveChangesButton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="319,52,0,0" Text="Language Selection" FontSize="100px" TextWrapping="Wrap" VerticalAlignment="Top" Height="172" Width="920"/>
 

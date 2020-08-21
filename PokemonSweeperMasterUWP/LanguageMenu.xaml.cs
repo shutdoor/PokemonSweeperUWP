@@ -29,7 +29,8 @@ namespace PokemonSweeperMasterUWP
 
         private void SaveChangesButton_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO add language selection and translation functionality here
+            this.Frame.Navigate(typeof(MainMenu));
         }
     }
 }

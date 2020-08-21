@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -33,7 +34,12 @@ namespace PokemonSweeperMasterUWP
         public MainPage()
         {
             this.InitializeComponent();
-            Game = new PokeSweepGame();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            Game = new PokeSweepGame((int)e.Parameter);
             Game.NewField(this);
         }
 
@@ -71,13 +77,12 @@ namespace PokemonSweeperMasterUWP
 
         private void InnerStackPanelLossButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Game = new PokeSweepGame();
-            Game.NewField(this);
+            this.Frame.Navigate(typeof(LevelMenu));
         }
 
         private void InnerStackPanelLevelWinButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            this.Frame.Navigate(typeof(LevelMenu));
         }
 
         #endregion
@@ -118,5 +123,10 @@ namespace PokemonSweeperMasterUWP
             return bitImage;
         }
         #endregion
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(LevelMenu));
+        }
     }
 }

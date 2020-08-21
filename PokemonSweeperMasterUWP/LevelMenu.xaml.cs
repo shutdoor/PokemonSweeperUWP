@@ -29,17 +29,17 @@ namespace PokemonSweeperMasterUWP
 
         private void Level1Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            this.Frame.Navigate(typeof(MainPage), 1);
         }
 
         private void Level2Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(MainPage), 2);
         }
 
         private void Level3Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(MainPage), 3);
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
