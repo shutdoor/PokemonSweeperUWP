@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using PokemonSweeperMasterUWP.Game.Field;
 using Windows.UI.Xaml.Controls;
 using Windows.Media.SpeechRecognition;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media;
 
 namespace PokemonSweeperMasterUWP.Game
 {
@@ -61,7 +63,7 @@ namespace PokemonSweeperMasterUWP.Game
 
             window.Width = 600 * FieldLevels[Level].Columns / FieldLevels[Level].Rows;
             window.MineFieldGrid.Width = 500 * FieldLevels[Level].Columns / FieldLevels[Level].Rows;
-
+            window.MineFieldGrid.Height = 500 * FieldLevels[Level].Columns / FieldLevels[Level].Rows;
             Field = new Field.Field(FieldLevels[Level].Rows, FieldLevels[Level].Columns,
                 FieldLevels[Level].Pokemon,
                 FieldLevels[Level].Open, window);
@@ -70,8 +72,10 @@ namespace PokemonSweeperMasterUWP.Game
             {
                 square.Tapped += window.MineSquare_Click;
                 square.RightTapped += window.MineSquare_MouseRightButtonDown;
-                square.Width = window.Width/FieldLevels[Level].Columns;
-                square.Height = window.Height/FieldLevels[Level].Rows;
+                square.Width = window.MineFieldGrid.Width/FieldLevels[Level].Columns;
+                square.Height = window.MineFieldGrid.Height/FieldLevels[Level].Rows;
+                square.BorderBrush = new SolidColorBrush(Windows.UI.Colors.Black);
+                /*square.BorderThickness = new Thickness(1, 1, 5, 5);*/
                 window.MineFieldGrid.Children.Add(square);
                 Grid.SetRow(square, square.Row);
                 Grid.SetColumn(square, square.Column);
