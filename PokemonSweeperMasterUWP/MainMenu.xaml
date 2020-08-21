@@ -9,10 +9,16 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Name="StartButton" Content="Start" Margin="0,260,0,0" VerticalAlignment="Top" Height="108" Width="203" HorizontalAlignment="Center" Click="StartButton_Click" />
-        <Button Name="QuitButton" Content="Quit" Margin="0,674,0,0" VerticalAlignment="Top" Height="108" Width="203" HorizontalAlignment="Center" Click="QuitButton_Click"/>
-        <Button Name="LanguageButton" Content="Languages" Height="108" Width="203" HorizontalAlignment="Center" Click="LanguageButton_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="356,10,0,0" Text="PokemonSweeper" FontSize="100px" TextWrapping="Wrap" VerticalAlignment="Top" Height="190" Width="819"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="1" Name="StartButton" Content="Start" VerticalAlignment="Center" Height="108" Width="203" HorizontalAlignment="Center" Click="StartButton_Click" />
+        <Button Grid.Row="3" Name="QuitButton" Content="Quit" VerticalAlignment="Center" Height="108" Width="203" HorizontalAlignment="Center" Click="QuitButton_Click"/>
+        <Button Grid.Row="2" Name="LanguageButton" Content="Languages" VerticalAlignment="Center" Height="108" Width="203" HorizontalAlignment="Center" Click="LanguageButton_Click"/>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="PokemonSweeper" FontSize="100px" TextWrapping="Wrap" VerticalAlignment="Center"/>
 
     </Grid>
 </Page>

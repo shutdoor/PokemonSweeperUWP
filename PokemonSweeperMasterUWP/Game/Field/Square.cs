@@ -128,7 +128,6 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 //if (Field.ClearedSquares + window.Game.FieldLevels[window.Game.Level].Pokemon ==
                 //    window.Game.FieldLevels[window.Game.Level].Dimention) Score.ShowScore(window, Field);
             }
-            Console.WriteLine("Kill my headache.");
         }
 
         public void SwipeSquare(MainPage window)
