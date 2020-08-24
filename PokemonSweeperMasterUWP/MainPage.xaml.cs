@@ -77,12 +77,12 @@ namespace PokemonSweeperMasterUWP
 
         private void InnerStackPanelLossButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(LevelMenu));
+            this.Frame.Navigate(typeof(MainPage), Game.Level);
         }
 
         private void InnerStackPanelLevelWinButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(LevelMenu));
+            this.Frame.Navigate(typeof(MainPage), Game.Level);
         }
 
         #endregion
