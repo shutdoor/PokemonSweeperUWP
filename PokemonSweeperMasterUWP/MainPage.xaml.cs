@@ -30,6 +30,7 @@ namespace PokemonSweeperMasterUWP
     public sealed partial class MainPage : Page
     {
         public PokeSweepGame Game { get; set; }
+        public bool gameEnded = false;
 
         public MainPage()
         {
@@ -39,18 +40,25 @@ namespace PokemonSweeperMasterUWP
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            gameEnded = false;
             Game = new PokeSweepGame((int)e.Parameter);
             Game.NewField(this);
         }
 
         public void MineSquare_MouseRightButtonDown(object sender, RightTappedRoutedEventArgs e)
         {
-            ((Square)sender).RightButton(this, (Square)sender);
+            if (!gameEnded)
+            {
+                ((Square)sender).RightButton(this, (Square)sender);
+            }
         }
 
         public void MineSquare_Click(object sender, TappedRoutedEventArgs e)
         {
-            ((Square)sender).LeftButton(this);
+            if (!gameEnded)
+            {
+                ((Square)sender).LeftButton(this);
+            }
         }
 
 
@@ -58,31 +66,56 @@ namespace PokemonSweeperMasterUWP
         #region Flyouts
 
         //On Lose Show This FlyOut
-        public void showLossFlyOut(int pokemonNumber)
+        public async void showLossFlyOut(int pokemonNumber)
         {
-            EscapedPokemon.Source = getPokemonImageForFlyOut(pokemonNumber);
-            textBoxContentFlyOut.Text = $"Sadly {(PokemonEnumList)pokemonNumber} - {pokemonNumber} Escaped.";
-            innerStackPanelButton.Content = "Retry";
-            innerStackPanelButton.Tapped += InnerStackPanelLossButton_Tapped;
-            FlyoutBase.ShowAttachedFlyout(MineFieldGrid);
+            ContentDialog contentDialog = new ContentDialog
+            {
+                Title = "You lost!",
+                Content = $"Sadly {(PokemonEnumList)pokemonNumber} - {pokemonNumber} Escaped.",
+                PrimaryButtonText = "Retry",
+                SecondaryButtonText = "Back to Level Selection"
+            };
+            ContentDialogResult result = await contentDialog.ShowAsync();
+            if (result == ContentDialogResult.Primary)
+            {
+                this.Frame.Navigate(typeof(MainPage), Game.Level);
+            }
+            else if(result == ContentDialogResult.Secondary)
+            {
+                this.Frame.Navigate(typeof(LevelMenu));
+            }
         }
-        public void showLevelWinFlyOut()
+        public async void showLevelWinFlyOut()
         {
-            EscapedPokemon.Source = getPokeballImage();
-            textBoxContentFlyOut.Text = $"Well done!\nYou have caught all the Pokemon";
-            innerStackPanelButton.Content = "Continue";
-            innerStackPanelButton.Tapped += InnerStackPanelLevelWinButton_Tapped;
-            FlyoutBase.ShowAttachedFlyout(MineFieldGrid);
-        }
-
-        private void InnerStackPanelLossButton_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage), Game.Level);
-        }
-
-        private void InnerStackPanelLevelWinButton_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage), Game.Level);
+            ContentDialog contentDialog;
+            if (Game.Level < 3)
+            {
+                contentDialog = new ContentDialog
+                {
+                    Title = "You won!",
+                    Content = "Well done you have caught all the pokemon",
+                    PrimaryButtonText = "Continue",
+                    SecondaryButtonText = "Back to Level Selection"
+                };
+            }
+            else
+            {
+                contentDialog = new ContentDialog
+                {
+                    Title = "You won!",
+                    Content = "Well done you have caught all the pokemon",
+                    SecondaryButtonText = "Back to Level Selection"
+                };
+            }
+            ContentDialogResult result = await contentDialog.ShowAsync();
+            if (result == ContentDialogResult.Primary)
+            {
+                this.Frame.Navigate(typeof(MainPage), Game.Level+1);
+            }
+            else if (result == ContentDialogResult.Secondary)
+            {
+                this.Frame.Navigate(typeof(LevelMenu));
+            }
         }
 
         #endregion
