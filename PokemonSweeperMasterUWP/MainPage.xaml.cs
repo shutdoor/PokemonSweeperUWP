@@ -53,36 +53,51 @@ namespace PokemonSweeperMasterUWP
             ((Square)sender).LeftButton(this);
         }
 
-
-        //TappedRoutedEventArgs
         #region Flyouts
 
         //On Lose Show This FlyOut
-        public void showLossFlyOut(int pokemonNumber)
+        public async void showLossFlyOut(int pokemonNumber)
         {
-            EscapedPokemon.Source = getPokemonImageForFlyOut(pokemonNumber);
-            textBoxContentFlyOut.Text = $"Sadly {(PokemonEnumList)pokemonNumber} - {pokemonNumber} Escaped.";
-            innerStackPanelButton.Content = "Retry";
-            innerStackPanelButton.Tapped += InnerStackPanelLossButton_Tapped;
-            FlyoutBase.ShowAttachedFlyout(MineFieldGrid);
-        }
-        public void showLevelWinFlyOut()
-        {
-            EscapedPokemon.Source = getPokeballImage();
-            textBoxContentFlyOut.Text = $"Well done!\nYou have caught all the Pokemon";
-            innerStackPanelButton.Content = "Continue";
-            innerStackPanelButton.Tapped += InnerStackPanelLevelWinButton_Tapped;
-            FlyoutBase.ShowAttachedFlyout(MineFieldGrid);
-        }
+            lossDialog dialog = new lossDialog();
+            dialog.EscapedPokemon.Source = getPokemonImageForFlyOut(pokemonNumber);
+            dialog.textBoxContentFlyOut.Text = $"Sadly, {(PokemonEnumList)pokemonNumber} - {pokemonNumber} Escaped.";
+            await dialog.lossConentDialog.ShowAsync();
 
-        private void InnerStackPanelLossButton_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(LevelMenu));
+            if (dialog.Result == "retry")
+            {
+                Game.NewField(this);
+            }
+            else if (dialog.Result == "return")
+            {
+                this.Frame.Navigate(typeof(LevelMenu));
+            }
         }
-
-        private void InnerStackPanelLevelWinButton_Tapped(object sender, TappedRoutedEventArgs e)
+        public async void showLevelWinFlyOut()
         {
-            this.Frame.Navigate(typeof(LevelMenu));
+            winDialog dialog = new winDialog();
+
+            if (Game.Level < 2)
+            {
+                dialog.nextLevelPanelButton.Visibility = Visibility.Visible;
+                dialog.mainMenuPanelButton.Visibility = Visibility.Visible;
+
+            }
+            else
+            {
+                dialog.nextLevelPanelButton.Visibility = Visibility.Collapsed;
+            }
+
+            await dialog.winConentDialog.ShowAsync();
+
+            if (dialog.Result == "next")
+            {
+                Game.Level++;
+                Game.NewField(this);
+            }
+            else if (dialog.Result == "main")
+            {
+                this.Frame.Navigate(typeof(MainMenu));
+            }
         }
 
         #endregion

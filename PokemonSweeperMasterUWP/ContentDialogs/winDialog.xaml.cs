@@ -17,25 +17,25 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PokemonSweeperMasterUWP
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class LanguageMenu : Page
+
+    public sealed partial class winDialog : ContentDialog
     {
-        public LanguageMenu()
+    public string Result { get; set; }
+        public winDialog()
         {
             this.InitializeComponent();
         }
 
-        private void SaveChangesButton_Click(object sender, RoutedEventArgs e)
+        private void nextLevelPanelButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            //TODO add language selection and translation functionality here
-           
+            this.Result = "next";
+            winConentDialog.Hide();
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void mainMenuPanelButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainMenu));
+            this.Result = "main";
+            winConentDialog.Hide();
         }
     }
 }

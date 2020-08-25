@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI;
 using Windows.UI.Text;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Media;
@@ -58,7 +59,10 @@ namespace PokemonSweeperMasterUWP.Game.Field
                           (s.Column >= Column - 1) && (s.Column <= Column + 1))
                     .ToList()))
                 {
-                    if (Square.Pokemon != null) mines++;
+                    if (Square.Pokemon != null)
+                    {
+                        mines++;
+                    }
                 }
                 return mines;
             }
@@ -109,12 +113,10 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 FlaggedSquares = Field.Squares.Where(square => square.Status == SquareStatus.Flagged).ToList();
                 sender.MinesLeftLabel.Text = $"{sender.Game.FieldLevels[sender.Game.Level].Pokemon - FlaggedSquares.Count()}";
             }
-            else
+            else if(Status == SquareStatus.Question)
             {
                 Status = SquareStatus.Open;
                 Content = "";
-                Foreground = new SolidColorBrush(Colors.LightGray);
-                FontWeight = FontWeights.Normal;
             }
 
         }
@@ -124,38 +126,36 @@ namespace PokemonSweeperMasterUWP.Game.Field
             if (Status == SquareStatus.Open)
             {
                 SwipeSquare(window);
-                //if (Field.ClearedSquares + window.Game.FieldLevels[window.Game.Level].Pokemon ==
-                //    window.Game.FieldLevels[window.Game.Level].Dimention) Score.ShowScore(window, Field);
             }
         }
 
         public void SwipeSquare(MainPage window)
         {
-            Field.NrOfClicks++;
             if (Pokemon != null)
             {
                 Content = new Image { Source = Pokemon.Picture };
                 Status = SquareStatus.Pokemon;
-                Background = new SolidColorBrush(Colors.Red);
-                BorderBrush = new SolidColorBrush(Colors.Red);
-                IsEnabled = false;
+                Background = new SolidColorBrush(Color.FromArgb(255, 179,27,0));
+                BorderBrush = new SolidColorBrush(Colors.Black);
+                BorderThickness = new Thickness(1);
+                //IsEnabled = false;
                 window.showLossFlyOut(Pokemon.Number);
-                //FailMessage.ShowMessage(window, Pokemon);
             }
             else if (Mines > 0)
             {
                 Content = Mines;
                 Status = SquareStatus.Cleared;
                 Background = new SolidColorBrush(Colors.White);
-                BorderBrush = new SolidColorBrush(Colors.White);
-                IsEnabled = false;
+                BorderBrush = new SolidColorBrush(Colors.Black);
+                BorderThickness = new Thickness(1);
+                //IsEnabled = false;
             }
             else
             {
                 Background = new SolidColorBrush(Colors.White);
-                BorderBrush = new SolidColorBrush(Colors.White);
+                BorderBrush = new SolidColorBrush(Colors.Black);
+                BorderThickness = new Thickness(1);
                 Status = SquareStatus.Cleared;
-                IsEnabled = false;
                 foreach (var OtherSquare in (Field.Squares.Where
                     (s => (s.Row >= Row - 1) && (s.Row <= Row + 1) &&
                           (s.Column >= Column - 1) && (s.Column <= Column + 1) && (s.Status == SquareStatus.Open))

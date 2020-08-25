@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PokemonSweeperMasterUWP.Game.Pokemon;
+using Windows.UI;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media;
 
 namespace PokemonSweeperMasterUWP.Game.Field
 {
@@ -13,11 +16,11 @@ namespace PokemonSweeperMasterUWP.Game.Field
         private readonly Random Random = new Random();
         public Stopwatch Timer;
 
-        public Field(int rows, int columns, int nrOfPokemon, int openSquares, MainPage window)
+        public Field(int rows, int columns, int nrOfPokemon, MainPage window)
         {
             Rows = rows;
             Columns = columns;
-            PopulateField(nrOfPokemon, openSquares, window);
+            PopulateField(nrOfPokemon, window);
             NrOfClicks = 0;
         }
 
@@ -32,7 +35,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
 
         public int NrOfClicks { get; set; }
 
-        private void PopulateField(int nrOfPokemon, int openSquares, MainPage window)
+        private void PopulateField(int nrOfPokemon, MainPage window)
         {
             var pokemonPlacers = new List<int>();
 
@@ -43,7 +46,8 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 do
                 {
                     pokemonLocation = Random.Next(Rows * Columns);
-                } while (pokemonPlacers.Contains(pokemonLocation));
+                }
+                while (pokemonPlacers.Contains(pokemonLocation));
                 pokemonPlacers.Add(pokemonLocation);
             }
             Squares = new List<Square>();
@@ -51,26 +55,29 @@ namespace PokemonSweeperMasterUWP.Game.Field
             {
                 for (var column = 0; column < Columns; column++)
                 {
-                    Squares.Add(new Square(this, Rows, Columns, row, column));
+                    //Creating a Square/Button & adding Styling
+                    Square s;
+                    s = new Square(this, Rows, Columns, row, column);
+                    s.Background = new SolidColorBrush(Color.FromArgb(255, 221, 221, 221));
+                    s.BorderBrush = new SolidColorBrush(Colors.Black);
+                    s.BorderThickness = new Thickness(1);
+                    s.Width = 50;
+                    s.Height = 50;
+
                     if (pokemonPlacers.Contains(Squares.Count - 1))
                     {
+
+                        //Cheat Mode - Changes Color of Squares Containting Mines
+                        //Squares[Squares.Count - 1].Background = new SolidColorBrush(Colors.Red);
+
                         Squares[Squares.Count - 1].Pokemon = new Pokemon.Pokemon
                         {
                             Type = (PokemonEnumList)Random.Next(1, 386)
                         };
                     }
+
+                    Squares.Add(s);
                 }
-            }
-            for (var i = 0; i < openSquares; i++)
-            {
-                int openLocation;
-                do
-                {
-                    openLocation = Random.Next(Rows * Columns);
-                } while (pokemonPlacers.Contains(openLocation) ||
-                         Squares[openLocation].Status == Square.SquareStatus.Cleared);
-                Squares[openLocation].Status = Square.SquareStatus.Cleared;
-                Squares[openLocation].SwipeSquare(window);
             }
         }
     }

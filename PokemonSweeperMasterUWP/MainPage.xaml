@@ -4,30 +4,48 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Height="900"
-    Width="800"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Margin="0,0,2,1"
           Name="windowGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height=".25*"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height=".10*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock
-            Name="MinesLeftLabel"
-            Grid.Row="0"
-            Text=""
-            x:FieldModifier="public"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Name="MinesLeftLabel"
+                       Text=""
+                       x:FieldModifier="public"/>
+            <Button Name="BackButton"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Back"
+                    Margin="10,10,0,0"
+                    Height="36" Width="100"
+                    Click="BackButton_Click"/>
+        </Grid>
 
-        <Grid Name="MineFieldGrid"
-            x:FieldModifier="public"
-            Grid.Row="2">
-
+        <Viewbox Margin="10"
+                 x:FieldModifier="public"
+                 Name="mineGridViewBox">
+            <Viewbox.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </Viewbox.Resources>
             <FlyoutBase.AttachedFlyout>
                 <Flyout>
-                    <Grid >
+                    <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height=".2*"/>
                             <RowDefinition Height="1*"/>
@@ -36,8 +54,7 @@
                             <TextBlock Name="flyOutHeader"></TextBlock>
                         </StackPanel>
                         <StackPanel Name="contentFlyOut" Orientation="Horizontal" Grid.Row="2">
-                            <!--<Image Grid.Column="0" Grid.Row="0" Name="EscapedPokemon" Source="/images/pokemon/001.png" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>-->
-                            <Image Margin="0 0 15 0"
+                            <Image
                                Name="EscapedPokemon"
                                Source="Assets/Pokemon/001.png"
                                HorizontalAlignment="Center"
@@ -57,8 +74,11 @@
                     </Grid>
                 </Flyout>
             </FlyoutBase.AttachedFlyout>
+            <Grid Name="MineFieldGrid"
+            x:FieldModifier="public"
+            Grid.Row="0">
 
-        </Grid>
-        <Button Name="BackButton" Content="Back" Margin="10,10,0,0" VerticalAlignment="Top" Height="36" Width="100" Click="BackButton_Click"/>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Page>

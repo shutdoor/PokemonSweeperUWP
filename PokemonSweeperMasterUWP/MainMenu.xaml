@@ -7,12 +7,53 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
     <Grid>
-        <Button Name="StartButton" Content="Start" Margin="0,260,0,0" VerticalAlignment="Top" Height="108" Width="203" HorizontalAlignment="Center" Click="StartButton_Click" />
-        <Button Name="QuitButton" Content="Quit" Margin="0,674,0,0" VerticalAlignment="Top" Height="108" Width="203" HorizontalAlignment="Center" Click="QuitButton_Click"/>
-        <Button Name="LanguageButton" Content="Languages" Height="108" Width="203" HorizontalAlignment="Center" Click="LanguageButton_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="356,10,0,0" Text="PokemonSweeper" FontSize="100px" TextWrapping="Wrap" VerticalAlignment="Top" Height="190" Width="819"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Text="PokemonSweeper"
+                   FontSize="80px"
+                   TextWrapping="Wrap"/>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin"
+                            Value="0 20 0 20"/>
+                    <Setter Property="Width"
+                            Value="200"/>
+                    <Setter Property="Height"
+                            Value="100"/>
+                    <Setter Property="HorizontalAlignment"
+                            Value="Center"/>
+                    <Setter Property="FontSize"
+                            Value="30"/>
+                </Style>
+            </Grid.Resources>
+            <Button Name="StartButton"
+                    Grid.Row="0"
+                Content="Start"
+                HorizontalAlignment="Center"
+                Click="StartButton_Click"/>
+            <Button Name="LanguageButton"
+                    Grid.Row="1"
+                Content="Languages"
+                    VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Click="LanguageButton_Click"/>
+            <Button Name="QuitButton"
+                    Grid.Row="2"
+                Content="Quit"
+                HorizontalAlignment="Center"
+                Click="QuitButton_Click"/>
+        </Grid>
     </Grid>
 </Page>
