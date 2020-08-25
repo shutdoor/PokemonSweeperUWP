@@ -150,6 +150,16 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings\de\DeResources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\en-US\EnResources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnResources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -620,7 +630,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Strings\en-US\Resources.resw" />
+    <EmbeddedResource Include="Strings\en-US\EnResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnResources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\PokemonSweeperMasterUWP.de.xlf" />
@@ -628,7 +641,10 @@
     <XliffResource Include="MultilingualResources\PokemonSweeperMasterUWP.qps-ploc.xlf" />
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Strings\de\Resources.resw" />
+    <EmbeddedResource Include="Strings\de\DeResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DeResources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="Strings\qps-ploc\Resources.resw" />

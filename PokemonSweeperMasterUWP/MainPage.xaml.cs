@@ -1,6 +1,8 @@
 ﻿using PokemonSweeperMasterUWP.Game;
 using PokemonSweeperMasterUWP.Game.Field;
 using PokemonSweeperMasterUWP.Game.Pokemon;
+using PokemonSweeperMasterUWP.Strings.de;
+using PokemonSweeperMasterUWP.Strings.en_US;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -35,6 +37,21 @@ namespace PokemonSweeperMasterUWP
         public MainPage()
         {
             this.InitializeComponent();
+
+            string language = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride;
+            System.Resources.ResourceManager resource = null;
+
+            switch (language)
+            {
+                case "de":
+                    resource = new System.Resources.ResourceManager(typeof(DeResources));
+                    break;
+                default:
+                    resource = new System.Resources.ResourceManager(typeof(EnResources));
+                    break;
+            }
+
+            BackButton.Content = resource.GetString("BackButton.Content");
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -69,7 +86,7 @@ namespace PokemonSweeperMasterUWP
             lossDialog dialog = new lossDialog();
             dialog.EscapedPokemon.Source = getPokemonImageForFlyOut(pokemonNumber);
             dialog.textBoxContentFlyOut.Text = $"Sadly, {(PokemonEnumList)pokemonNumber} - {pokemonNumber} Escaped.";
-            await dialog.lossConentDialog.ShowAsync();
+            await dialog.lossContentDialog.ShowAsync();
 
             if (dialog.Result == "retry")
             {

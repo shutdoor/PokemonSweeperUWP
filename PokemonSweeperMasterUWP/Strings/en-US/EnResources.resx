@@ -120,6 +120,9 @@
   <data name="BackButton.Content" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="CaughtPokemon" xml:space="preserve">
+    <value>You have caught all the pokemon!</value>
+  </data>
   <data name="English" xml:space="preserve">
     <value>English</value>
   </data>
@@ -142,17 +145,38 @@
     <value>Levels</value>
     <comment>To be displayed as the title for the Level xaml</comment>
   </data>
+  <data name="MainMenu" xml:space="preserve">
+    <value>Main Menu</value>
+  </data>
   <data name="MainTitle.Text" xml:space="preserve">
     <value>PokemonSweeper</value>
     <comment>To be displayed on the Main Page xaml</comment>
   </data>
+  <data name="NextLevel" xml:space="preserve">
+    <value>Next Level</value>
+  </data>
   <data name="QuitButton.Content" xml:space="preserve">
     <value>Quit</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="ReturnLevels" xml:space="preserve">
+    <value>Return Levels</value>
   </data>
   <data name="SaveChangesButton.Content" xml:space="preserve">
     <value>Save Changes</value>
   </data>
   <data name="StartButton.Content" xml:space="preserve">
     <value>Start</value>
+  </data>
+  <data name="WellDone" xml:space="preserve">
+    <value>Well done!</value>
+  </data>
+  <data name="YouLost" xml:space="preserve">
+    <value>You Lost!</value>
+  </data>
+  <data name="YouWon" xml:space="preserve">
+    <value>You Won!</value>
   </data>
 </root>

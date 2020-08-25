@@ -12,42 +12,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BackButton.Content" xml:space="preserve">
-    <value>[0E62C][!!_ßãĉќ_!!]</value>
-  </data>
-  <data name="English" xml:space="preserve">
-    <value>[CC963][!!_Éήğĺįşђ_!!]</value>
-  </data>
-  <data name="LanguagesButton.Content" xml:space="preserve">
-    <value>[B8DE8][!!_Ŀâήğµáġêś_!!]</value>
-  </data>
-  <data name="LanguageSelection.Text" xml:space="preserve">
-    <value>[F8E5C][!!_Ŀãήĝµàġê Šęļèĉτíõй_!!]</value>
-  </data>
-  <data name="Level1Button.Content" xml:space="preserve">
-    <value>[DA93F][!!_Ľèνęł 1_!!]</value>
-  </data>
-  <data name="Level2Button.Content" xml:space="preserve">
-    <value>[B5C9F][!!_Ĺèνęļ 2_!!]</value>
-  </data>
-  <data name="Level3Button.Content" xml:space="preserve">
-    <value>[0B2E1][!!_Ĺèνêľ 3_!!]</value>
-  </data>
-  <data name="LevelTitle.Text" xml:space="preserve">
-    <value>[91FA1][!!_Ŀêνéļš_!!]</value>
-    <comment>To be displayed as the title for the Level xaml</comment>
-  </data>
-  <data name="MainTitle.Text" xml:space="preserve">
-    <value>[01530][!!_РõкèмóηŜẅèéρèѓ_!!]</value>
-    <comment>To be displayed on the Main Page xaml</comment>
-  </data>
-  <data name="QuitButton.Content" xml:space="preserve">
-    <value>[92A42][!!_Qúįť_!!]</value>
-  </data>
-  <data name="SaveChangesButton.Content" xml:space="preserve">
-    <value>[ED85A][!!_Śáνé Ċĥàηģêş_!!]</value>
-  </data>
-  <data name="StartButton.Content" xml:space="preserve">
-    <value>[F0A36][!!_Ŝţàѓт_!!]</value>
-  </data>
 </root>

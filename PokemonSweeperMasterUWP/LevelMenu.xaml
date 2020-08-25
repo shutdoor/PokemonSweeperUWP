@@ -16,7 +16,8 @@
         <TextBlock HorizontalAlignment="Center"
                    FontSize="80px"
                    Text="Levels"
-                   TextWrapping="Wrap"/>
+                   TextWrapping="Wrap"
+                   x:Name="Levels"/>
         <Button x:Name="BackButton"
                 Content="Back"
                 Height="60"

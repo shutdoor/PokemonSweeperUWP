@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PokemonSweeperMasterUWP.Strings.de;
+using PokemonSweeperMasterUWP.Strings.en_US;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,18 +26,36 @@ namespace PokemonSweeperMasterUWP
         public winDialog()
         {
             this.InitializeComponent();
+
+            string language = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride;
+            System.Resources.ResourceManager resource = null;
+
+            switch (language)
+            {
+                case "de":
+                    resource = new System.Resources.ResourceManager(typeof(DeResources));
+                    break;
+                default:
+                    resource = new System.Resources.ResourceManager(typeof(EnResources));
+                    break;
+            }
+            winContentDialog.Title = resource.GetString("YouWon");
+            WellDone.Text = resource.GetString("WellDone");
+            Caught.Text = resource.GetString("CaughtPokemon");
+            nextLevelPanelButton.Content = resource.GetString("NextLevel");
+            mainMenuPanelButton.Content = resource.GetString("MainMenu");
         }
 
         private void nextLevelPanelButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Result = "next";
-            winConentDialog.Hide();
+            winContentDialog.Hide();
         }
 
         private void mainMenuPanelButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Result = "main";
-            winConentDialog.Hide();
+            winContentDialog.Hide();
         }
     }
 }
