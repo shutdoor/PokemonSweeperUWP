@@ -74,27 +74,14 @@ namespace PokemonSweeperMasterUWP
         }
         public async void showLevelWinFlyOut()
         {
-            winDialog dialog = new winDialog();
+            string returnRes = await winDialog.showWin(this, Game.Field);
 
-            if (Game.Level < 2)
-            {
-                dialog.nextLevelPanelButton.Visibility = Visibility.Visible;
-                dialog.mainMenuPanelButton.Visibility = Visibility.Visible;
-
-            }
-            else
-            {
-                dialog.nextLevelPanelButton.Visibility = Visibility.Collapsed;
-            }
-
-            await dialog.winConentDialog.ShowAsync();
-
-            if (dialog.Result == "next")
+            if (returnRes == "next")
             {
                 Game.Level++;
                 Game.NewField(this);
             }
-            else if (dialog.Result == "main")
+            else if (returnRes == "main")
             {
                 this.Frame.Navigate(typeof(MainMenu));
             }

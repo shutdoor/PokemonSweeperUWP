@@ -13,18 +13,19 @@
             <RowDefinition Height="0.2*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock HorizontalAlignment="Center"
-                   FontSize="80px"
-                   Text="Levels"
-                   TextWrapping="Wrap"/>
-        <Button x:Name="BackButton"
-                Content="Back"
-                Height="60"
-                Margin="10 0 0 0"
-                Width="150"
-                FontSize="20"
-                VerticalAlignment="Center"
-                Click="BackButton_Click"/>
+        
+            <TextBlock HorizontalAlignment="Center"
+                       FontSize="80px"
+                       Text="Levels"
+                       TextWrapping="Wrap"/>
+            <Button x:Name="BackButton"
+                    Content="Back"
+                    Height="60"
+                    Margin="10 0 0 0"
+                    Width="150"
+                    FontSize="20"
+                    VerticalAlignment="Center"
+                    Click="BackButton_Click"/>
 
         <StackPanel Grid.Row="1">
             <StackPanel.Resources>

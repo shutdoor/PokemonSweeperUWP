@@ -21,15 +21,15 @@ namespace PokemonSweeperMasterUWP.Game
             Level = gameDiff;
             Pokemon = new List<Pokemon.Pokemon>(); // make empty list of Pokemon captured
             FieldLevels = new List<FieldLevel>(); // Make list of Game Levels
-            FieldLevels.Add(new FieldLevel { Rows = 9, Columns = 9, Pokemon = 10 });
-            FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 16, Pokemon = 40 });
-            FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 30, Pokemon = 99 });
+            //FieldLevels.Add(new FieldLevel { Rows = 9, Columns = 9, Pokemon = 10 });
+            //FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 16, Pokemon = 40 });
+            //FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 30, Pokemon = 99 });
 
 
             //Debug & Win Tester
-            //FieldLevels.Add(new FieldLevel { Rows = 9, Columns = 9, Pokemon = 1 });
-            //FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 16, Pokemon = 1 });
-            //FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 30, Pokemon = 1 });
+            FieldLevels.Add(new FieldLevel { Rows = 9, Columns = 9, Pokemon = 1 });
+            FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 16, Pokemon = 1 });
+            FieldLevels.Add(new FieldLevel { Rows = 16, Columns = 30, Pokemon = 1 });
 
         }
 
@@ -59,6 +59,7 @@ namespace PokemonSweeperMasterUWP.Game
                 colDef = new ColumnDefinition();
                 window.MineFieldGrid.ColumnDefinitions.Add(colDef);
             }
+
             Field = new Field.Field(FieldLevels[Level].Rows, FieldLevels[Level].Columns,
                 FieldLevels[Level].Pokemon, window);
 
@@ -70,7 +71,7 @@ namespace PokemonSweeperMasterUWP.Game
                 Grid.SetRow(square, square.Row);
                 Grid.SetColumn(square, square.Column);
             }
-            window.MinesLeftLabel.Text = $"Pokemon: {FieldLevels[Level].Pokemon}";
+            window.MinesLeftLabel.Text = $"Poke Balls: {FieldLevels[Level].Pokemon}";
         }
     }
 }

@@ -19,13 +19,14 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="1"
-                       HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        Name="MinesLeftLabel"
                        Text=""
+                       FontSize="20"
+                       HorizontalAlignment="Center"
                        x:FieldModifier="public"/>
             <Button Name="BackButton"
-                    HorizontalAlignment="Left"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Content="Back"
                     Margin="10,10,0,0"
