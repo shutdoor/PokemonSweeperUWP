@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="POKEMONSWEEPERMASTERUWP/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6916.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="POKEMONSWEEPERMASTERUWP/STRINGS/EN-US/RESOURCES.RESW" datatype="resx">
+        <trans-unit id="BackButton.Content" translate="yes" xml:space="preserve">
+          <source>Back</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[0E62C][!!_ßãĉќ_!!]</target>
+        </trans-unit>
+        <trans-unit id="English" translate="yes" xml:space="preserve">
+          <source>English</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[CC963][!!_Éήğĺįşђ_!!]</target>
+        </trans-unit>
+        <trans-unit id="LanguagesButton.Content" translate="yes" xml:space="preserve">
+          <source>Languages</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[B8DE8][!!_Ŀâήğµáġêś_!!]</target>
+        </trans-unit>
+        <trans-unit id="LanguageSelection.Text" translate="yes" xml:space="preserve">
+          <source>Language Selection</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[F8E5C][!!_Ŀãήĝµàġê Šęļèĉτíõй_!!]</target>
+        </trans-unit>
+        <trans-unit id="Level1Button.Content" translate="yes" xml:space="preserve">
+          <source>Level 1</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[DA93F][!!_Ľèνęł 1_!!]</target>
+        </trans-unit>
+        <trans-unit id="Level2Button.Content" translate="yes" xml:space="preserve">
+          <source>Level 2</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[B5C9F][!!_Ĺèνęļ 2_!!]</target>
+        </trans-unit>
+        <trans-unit id="Level3Button.Content" translate="yes" xml:space="preserve">
+          <source>Level 3</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[0B2E1][!!_Ĺèνêľ 3_!!]</target>
+        </trans-unit>
+        <trans-unit id="LevelTitle.Text" translate="yes" xml:space="preserve">
+          <source>Levels</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[91FA1][!!_Ŀêνéļš_!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">To be displayed as the title for the Level xaml</note>
+        </trans-unit>
+        <trans-unit id="MainTitle.Text" translate="yes" xml:space="preserve">
+          <source>PokemonSweeper</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[01530][!!_РõкèмóηŜẅèéρèѓ_!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">To be displayed on the Main Page xaml</note>
+        </trans-unit>
+        <trans-unit id="QuitButton.Content" translate="yes" xml:space="preserve">
+          <source>Quit</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[92A42][!!_Qúįť_!!]</target>
+        </trans-unit>
+        <trans-unit id="SaveChangesButton.Content" translate="yes" xml:space="preserve">
+          <source>Save Changes</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[ED85A][!!_Śáνé Ċĥàηģêş_!!]</target>
+        </trans-unit>
+        <trans-unit id="StartButton.Content" translate="yes" xml:space="preserve">
+          <source>Start</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[F0A36][!!_Ŝţàѓт_!!]</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

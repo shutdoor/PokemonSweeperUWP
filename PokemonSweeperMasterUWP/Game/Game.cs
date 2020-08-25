@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PokemonSweeperMasterUWP.Game.Field;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
 
 namespace PokemonSweeperMasterUWP.Game
 {

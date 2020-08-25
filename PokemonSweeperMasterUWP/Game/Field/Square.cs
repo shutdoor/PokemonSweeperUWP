@@ -156,9 +156,8 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 Content = "";
                 Status = SquareStatus.Cleared;
                 //IsEnabled = false;
-                this.Background = new SolidColorBrush(Color.FromArgb(100, 103, 103, 103));
+                Background = new SolidColorBrush(Color.FromArgb(100, 103, 103, 103));
                 BorderBrush = new SolidColorBrush(Colors.Black);
-                BorderThickness = new Thickness(10);
                 List<Square> SurroundingSquares = Field.Squares.Where
                     (s => (s.Row >= Row - 1) && (s.Row <= Row + 1) &&
                           (s.Column >= Column - 1) && (s.Column <= Column + 1) && (s.Status == SquareStatus.Open))

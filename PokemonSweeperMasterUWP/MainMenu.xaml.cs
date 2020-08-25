@@ -26,6 +26,9 @@ namespace PokemonSweeperMasterUWP
         public MainMenu()
         {
             this.InitializeComponent();
+            var resourceContext = new Windows.ApplicationModel.Resources.Core.ResourceContext().QualifierValues["Languages"];
+            var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+            StartButton.Content = resourceLoader.GetString("StartButton");
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)

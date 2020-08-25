@@ -32,5 +32,25 @@ namespace PokemonSweeperMasterUWP
             //TODO add language selection and translation functionality here
             this.Frame.Navigate(typeof(MainMenu));
         }
+
+        private void LanguageSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string language = e.AddedItems[0].ToString();
+            var resourceContext = new Windows.ApplicationModel.Resources.Core.ResourceContext();
+            switch(language)
+            {
+                case "English":
+                    resourceContext.QualifierValues["Language"] = "en-US";
+                    Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Language", "en-US");
+                    Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "en-US";
+                    break;
+                case "German":
+                    resourceContext.QualifierValues["Language"] = "de";
+                    Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Language", "de");
+                    Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "de";
+                    break;
+            }
+            
+        }
     }
 }

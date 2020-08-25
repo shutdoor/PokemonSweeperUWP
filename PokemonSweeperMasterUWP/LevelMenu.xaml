@@ -15,11 +15,11 @@
             <RowDefinition Height="25*"/>
             <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
-            <Button Name="Level1Button" Grid.Row="1" Content="Level 1" VerticalAlignment="Center" Height="88" Width="152" HorizontalAlignment="Center" Click="Level1Button_Click" />
-        <Button Name="Level2Button" Grid.Row="2" Content="Level 2" Height="88" Width="152" HorizontalAlignment="Center" Click="Level2Button_Click" VerticalAlignment="Center"/>
-        <Button Name="Level3Button" Grid.Row="3" Content="Level 3" Height="88" Width="152" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Level3Button_Click"/>
-        <TextBlock FontSize="100px" Text="Levels" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Height="146" Width="287"/>
-        <Button x:Name="BackButton" Content="Back" Height="88" Width="152" Margin="114,87,0,0" VerticalAlignment="Top" Click="BackButton_Click"/>
+            <Button Name="Level1Button" Grid.Row="1" x:Uid="Level1Button" VerticalAlignment="Center" Height="88" Width="152" HorizontalAlignment="Center" Click="Level1Button_Click" />
+        <Button Name="Level2Button" x:Uid="Level2Button" Grid.Row="2" Height="88" Width="152" HorizontalAlignment="Center" Click="Level2Button_Click" VerticalAlignment="Center"/>
+        <Button Name="Level3Button" x:Uid="Level3Button" Grid.Row="3" Height="88" Width="152" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Level3Button_Click"/>
+        <TextBlock FontSize="100px" x:Uid="LevelTitle" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Height="146" Width="287"/>
+        <Button x:Name="BackButton" x:Uid="BackButton" Height="88" Width="152" Margin="114,87,0,0" VerticalAlignment="Top" Click="BackButton_Click"/>
 
     </Grid>
 </Page>

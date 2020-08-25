@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en" original="POKEMONSWEEPERMASTERUWP/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6916.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="POKEMONSWEEPERMASTERUWP/STRINGS/EN-US/RESOURCES.RESW" datatype="resx">
+        <trans-unit id="BackButton.Content" translate="yes" xml:space="preserve">
+          <source>Back</source>
+          <target state="new">Back</target>
+        </trans-unit>
+        <trans-unit id="English" translate="yes" xml:space="preserve">
+          <source>English</source>
+          <target state="new">English</target>
+        </trans-unit>
+        <trans-unit id="LanguagesButton.Content" translate="yes" xml:space="preserve">
+          <source>Languages</source>
+          <target state="new">Languages</target>
+        </trans-unit>
+        <trans-unit id="LanguageSelection.Text" translate="yes" xml:space="preserve">
+          <source>Language Selection</source>
+          <target state="new">Language Selection</target>
+        </trans-unit>
+        <trans-unit id="Level1Button.Content" translate="yes" xml:space="preserve">
+          <source>Level 1</source>
+          <target state="new">Level 1</target>
+        </trans-unit>
+        <trans-unit id="Level2Button.Content" translate="yes" xml:space="preserve">
+          <source>Level 2</source>
+          <target state="new">Level 2</target>
+        </trans-unit>
+        <trans-unit id="Level3Button.Content" translate="yes" xml:space="preserve">
+          <source>Level 3</source>
+          <target state="new">Level 3</target>
+        </trans-unit>
+        <trans-unit id="LevelTitle.Text" translate="yes" xml:space="preserve">
+          <source>Levels</source>
+          <target state="new">Levels</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">To be displayed as the title for the Level xaml</note>
+        </trans-unit>
+        <trans-unit id="MainTitle.Text" translate="yes" xml:space="preserve">
+          <source>PokemonSweeper</source>
+          <target state="new">PokemonSweeper</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">To be displayed on the Main Page xaml</note>
+        </trans-unit>
+        <trans-unit id="QuitButton.Content" translate="yes" xml:space="preserve">
+          <source>Quit</source>
+          <target state="new">Quit</target>
+        </trans-unit>
+        <trans-unit id="SaveChangesButton.Content" translate="yes" xml:space="preserve">
+          <source>Save Changes</source>
+          <target state="new">Save Changes</target>
+        </trans-unit>
+        <trans-unit id="StartButton.Content" translate="yes" xml:space="preserve">
+          <source>Start</source>
+          <target state="new">Start</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
