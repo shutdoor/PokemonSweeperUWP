@@ -1,0 +1,51 @@
+﻿<ContentDialog
+    x:Class="PokemonSweeperMasterUWP.winDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PokemonSweeperMasterUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="200"
+    Width="300"
+    Title="You Won!"
+    x:FieldModifier="public"
+    x:Name="winConentDialog"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
+            <TextBlock Name="flyOutHeader"></TextBlock>
+        </StackPanel>
+        <StackPanel Name="contentFlyOut" Orientation="Horizontal" Grid.Row="2">
+
+            
+            <StackPanel Name="innerContentStackPanel"
+                        Orientation="Vertical"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Well done!"/>
+                <TextBlock Text="You have caught all the Pokemon!" Margin="0 0 0 10"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="nextLevelPanelButton"
+                            Padding="5"
+                            Content="Next Level"
+                            Margin="0 0 5 0"
+                            x:FieldModifier="public"
+                            Tapped="nextLevelPanelButton_Tapped"
+                            HorizontalAlignment="Right"/>
+
+                    <Button Name="mainMenuPanelButton"
+                            Padding="5"
+                            Content="Main Menu"
+                            x:FieldModifier="public"
+                            Tapped="mainMenuPanelButton_Tapped"
+                            HorizontalAlignment="Right"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</ContentDialog>

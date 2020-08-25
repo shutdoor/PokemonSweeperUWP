@@ -125,6 +125,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentDialogs\lossDialog.xaml.cs">
+      <DependentUpon>lossDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentDialogs\winDialog.xaml.cs">
+      <DependentUpon>winDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Game\Field\Field.cs" />
     <Compile Include="Game\Field\FieldLevel.cs" />
     <Compile Include="Game\Field\Square.cs" />
@@ -576,12 +582,21 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="notes.txt" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ContentDialogs\lossDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ContentDialogs\winDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="LanguageMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

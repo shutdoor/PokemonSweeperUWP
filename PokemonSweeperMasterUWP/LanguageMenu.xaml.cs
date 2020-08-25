@@ -30,6 +30,11 @@ namespace PokemonSweeperMasterUWP
         private void SaveChangesButton_Click(object sender, RoutedEventArgs e)
         {
             //TODO add language selection and translation functionality here
+           
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
             this.Frame.Navigate(typeof(MainMenu));
         }
 

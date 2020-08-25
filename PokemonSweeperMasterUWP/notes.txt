@@ -1,0 +1,2 @@
+﻿Field.CS - 70 Cheat Mode
+Game.CS - 30-32 Reduce Mines

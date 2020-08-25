@@ -61,60 +61,50 @@ namespace PokemonSweeperMasterUWP
             }
         }
 
-
-        //TappedRoutedEventArgs
         #region Flyouts
 
         //On Lose Show This FlyOut
         public async void showLossFlyOut(int pokemonNumber)
         {
-            ContentDialog contentDialog = new ContentDialog
+            lossDialog dialog = new lossDialog();
+            dialog.EscapedPokemon.Source = getPokemonImageForFlyOut(pokemonNumber);
+            dialog.textBoxContentFlyOut.Text = $"Sadly, {(PokemonEnumList)pokemonNumber} - {pokemonNumber} Escaped.";
+            await dialog.lossConentDialog.ShowAsync();
+
+            if (dialog.Result == "retry")
             {
-                Title = "You lost!",
-                Content = $"Sadly {(PokemonEnumList)pokemonNumber} - {pokemonNumber} Escaped.",
-                PrimaryButtonText = "Retry",
-                SecondaryButtonText = "Back to Level Selection"
-            };
-            ContentDialogResult result = await contentDialog.ShowAsync();
-            if (result == ContentDialogResult.Primary)
-            {
-                this.Frame.Navigate(typeof(MainPage), Game.Level);
+                Game.NewField(this);
             }
-            else if(result == ContentDialogResult.Secondary)
+            else if (dialog.Result == "return")
             {
                 this.Frame.Navigate(typeof(LevelMenu));
             }
         }
         public async void showLevelWinFlyOut()
         {
-            ContentDialog contentDialog;
-            if (Game.Level < 3)
+            winDialog dialog = new winDialog();
+
+            if (Game.Level < 2)
             {
-                contentDialog = new ContentDialog
-                {
-                    Title = "You won!",
-                    Content = "Well done you have caught all the pokemon",
-                    PrimaryButtonText = "Continue",
-                    SecondaryButtonText = "Back to Level Selection"
-                };
+                dialog.nextLevelPanelButton.Visibility = Visibility.Visible;
+                dialog.mainMenuPanelButton.Visibility = Visibility.Visible;
+
             }
             else
             {
-                contentDialog = new ContentDialog
-                {
-                    Title = "You won!",
-                    Content = "Well done you have caught all the pokemon",
-                    SecondaryButtonText = "Back to Level Selection"
-                };
+                dialog.nextLevelPanelButton.Visibility = Visibility.Collapsed;
             }
-            ContentDialogResult result = await contentDialog.ShowAsync();
-            if (result == ContentDialogResult.Primary)
+
+            await dialog.winConentDialog.ShowAsync();
+
+            if (dialog.Result == "next")
             {
-                this.Frame.Navigate(typeof(MainPage), Game.Level+1);
+                Game.Level++;
+                Game.NewField(this);
             }
-            else if (result == ContentDialogResult.Secondary)
+            else if (dialog.Result == "main")
             {
-                this.Frame.Navigate(typeof(LevelMenu));
+                this.Frame.Navigate(typeof(MainMenu));
             }
         }
 

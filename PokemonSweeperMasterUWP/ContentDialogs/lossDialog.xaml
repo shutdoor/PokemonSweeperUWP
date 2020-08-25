@@ -1,0 +1,61 @@
+﻿<ContentDialog
+    x:Class="PokemonSweeperMasterUWP.lossDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PokemonSweeperMasterUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="200"
+    Width="300"
+    Title="You Lost!"
+    x:FieldModifier="public"
+    x:Name="lossConentDialog"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
+            <TextBlock Name="flyOutHeader"></TextBlock>
+        </StackPanel>
+        <StackPanel Name="contentFlyOut"
+                    Orientation="Horizontal"
+                    Grid.Row="2">
+
+            <Image Name="EscapedPokemon"
+                   Width="80"
+                   Height="80"
+                   Margin="0 0 15 0"
+                       x:FieldModifier="public"
+                       Source="Assets/Pokemon/001.png"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+            
+            <StackPanel Name="innerContentStackPanel"
+                        Orientation="Vertical"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+
+                <TextBlock Name="textBoxContentFlyOut"
+                           x:FieldModifier="public"
+                           TextWrapping="Wrap"/>
+                <StackPanel Orientation="Horizontal">
+                    
+                <Button Name="retryButton"
+                        Content="Retry"
+                        Padding="5"
+                        Tapped="innerStackPanelButton_Tapped"
+                        Margin="0 10 0 0"/>
+                    <Button Name="returnButton"
+                        Content="Return Levels"
+                        Padding="5"
+                        Tapped="returnButton_Tapped"
+                        Margin="5 10 0 0"/>
+                </StackPanel>
+                
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</ContentDialog>
