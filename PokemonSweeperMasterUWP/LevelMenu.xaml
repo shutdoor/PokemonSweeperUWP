@@ -14,7 +14,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         
-            <TextBlock HorizontalAlignment="Center"
+            <TextBlock x:Name="Levels" HorizontalAlignment="Center"
                        FontSize="80px"
                        Text="Levels"
                        TextWrapping="Wrap"/>

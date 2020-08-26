@@ -1,9 +1,13 @@
-﻿using System;
+﻿using PokemonSweeperMasterUWP.Strings.de;
+using PokemonSweeperMasterUWP.Strings.en_US;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Core;
+using Windows.ApplicationModel.Resources.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -26,6 +30,21 @@ namespace PokemonSweeperMasterUWP
         public MainMenu()
         {
             this.InitializeComponent();
+            string language = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride;
+            System.Resources.ResourceManager resource = null;
+
+            switch(language)
+            {
+                case "de":
+                    resource = new System.Resources.ResourceManager(typeof(DeResources));
+                    break;
+                default:
+                    resource = new System.Resources.ResourceManager(typeof(EnResources));
+                    break;
+            }
+            StartButton.Content = resource.GetString("StartButton.Content");
+            LanguageButton.Content = resource.GetString("LanguagesButton.Content");
+            QuitButton.Content = resource.GetString("QuitButton.Content");
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)

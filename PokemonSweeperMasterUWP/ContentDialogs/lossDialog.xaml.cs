@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PokemonSweeperMasterUWP.Strings.de;
+using PokemonSweeperMasterUWP.Strings.en_US;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,18 +26,34 @@ namespace PokemonSweeperMasterUWP
         public lossDialog()
         {
             this.InitializeComponent();
+
+            string language = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride;
+            System.Resources.ResourceManager resource = null;
+
+            switch (language)
+            {
+                case "de":
+                    resource = new System.Resources.ResourceManager(typeof(DeResources));
+                    break;
+                default:
+                    resource = new System.Resources.ResourceManager(typeof(EnResources));
+                    break;
+            }
+            retryButton.Content = resource.GetString("Retry");
+            returnButton.Content = resource.GetString("ReturnLevels");
+            lossContentDialog.Title = resource.GetString("YouLost");
         }
 
         private  void innerStackPanelButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Result = "retry";
-            lossConentDialog.Hide();
+            lossContentDialog.Hide();
         }
 
         private void returnButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Result = "return";
-            lossConentDialog.Hide();
+            lossContentDialog.Hide();
         }
     }
 }

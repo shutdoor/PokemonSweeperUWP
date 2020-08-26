@@ -18,7 +18,8 @@
             FontSize="80px"
             TextWrapping="Wrap"
             VerticalAlignment="Center"
-            Grid.Row="0"/>
+            Grid.Row="0" 
+            x:Name="LanguageSelection"/>
         <Button x:Name="BackButton"
                 Content="Back"
                 Height="60"
@@ -37,7 +38,7 @@
                       Margin="0 0 0 40"
                       FontSize="30"
                       BorderThickness="2"
-                      HorizontalAlignment="Center">
+                      HorizontalAlignment="Center" SelectionChanged="LanguageSelector_SelectionChanged">
                 <x:String>English</x:String>
                 <x:String>German</x:String>
             </ComboBox>

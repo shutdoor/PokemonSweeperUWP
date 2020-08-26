@@ -10,7 +10,7 @@
     Width="300"
     Title="You Lost!"
     x:FieldModifier="public"
-    x:Name="lossConentDialog"
+    x:Name="lossContentDialog"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid >

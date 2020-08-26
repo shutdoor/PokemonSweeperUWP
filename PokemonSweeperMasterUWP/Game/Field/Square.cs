@@ -96,7 +96,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
                             win = false;
                         }
                     }
-                    if (win) sender.showLevelWinFlyOut(); //If the winned, we need to send them to a win page.
+                    if (win) sender.showLevelWinFlyOut(); //If the won, we need to send them to a win page.
                 }
             }
             else if (Status == SquareStatus.Flagged)
@@ -165,6 +165,10 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 BorderBrush = new SolidColorBrush(Colors.Black);
                 BorderThickness = new Thickness(1);
                 Status = SquareStatus.Cleared;
+                foreach (var OtherSquare in (Field.Squares.Where
+                    (s => (s.Row >= Row - 1) && (s.Row <= Row + 1) &&
+                          (s.Column >= Column - 1) && (s.Column <= Column + 1) && (s.Status == SquareStatus.Open))
+                    .ToList()));
                 foreach (var OtherSquare in (Field.Squares.Where
                     (s => (s.Row >= Row - 1) && (s.Row <= Row + 1) &&
                           (s.Column >= Column - 1) && (s.Column <= Column + 1) && (s.Status == SquareStatus.Open))

@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dwight\\source\\repos\\PokemonSweeperBorder\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj": {}
+    "C:\\Users\\Kathy Broderick\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dwight\\source\\repos\\PokemonSweeperBorder\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj": {
+    "C:\\Users\\Kathy Broderick\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dwight\\source\\repos\\PokemonSweeperBorder\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
+        "projectUniqueName": "C:\\Users\\Kathy Broderick\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
         "projectName": "PokemonSweeperMasterUWP",
-        "projectPath": "C:\\Users\\dwight\\source\\repos\\PokemonSweeperBorder\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
-        "packagesPath": "C:\\Users\\dwight\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dwight\\source\\repos\\PokemonSweeperBorder\\PokemonSweeperMasterUWP\\obj\\",
+        "projectPath": "C:\\Users\\Kathy Broderick\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\PokemonSweeperMasterUWP.csproj",
+        "packagesPath": "C:\\Users\\Kathy Broderick\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kathy Broderick\\Documents\\GitHub\\PokemonSweeperUWP\\PokemonSweeperMasterUWP\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\dwight\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kathy Broderick\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
