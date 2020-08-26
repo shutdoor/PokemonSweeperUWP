@@ -29,7 +29,6 @@
                         VerticalAlignment="Center">
                 <TextBlock x:Name="WellDone" Text="Well done!"/>
                 <TextBlock x:Name="Caught" Text="You have caught all the Pokemon!" Margin="0 0 0 10"/>
-                <TextBlock Text="You have caught all the Pokemon!" Margin="0 0 0 10"/>
                 <ListBox Grid.Column="0"
                          BorderBrush="Black"
                          BorderThickness="1"
