@@ -68,7 +68,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
                     {
 
                         //Cheat Mode - Changes Color of Squares Containting Mines
-                        //Squares[Squares.Count - 1].Background = new SolidColorBrush(Colors.Red);
+                        Squares[Squares.Count - 1].Background = new SolidColorBrush(Colors.Red);
 
                         Squares[Squares.Count - 1].Pokemon = new Pokemon.Pokemon
                         {

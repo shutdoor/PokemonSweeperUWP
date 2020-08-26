@@ -85,7 +85,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 //Content = new Image { Source = new BitmapImage(new Uri(@"/Game/images/pokeball.png", UriKind.Relative)) };
 
                 FlaggedSquares = Field.Squares.Where(square => square.Status == SquareStatus.Flagged).ToList();
-                sender.MinesLeftLabel.Text = $"{sender.Game.FieldLevels[sender.Game.Level].Pokemon - FlaggedSquares.Count()}";
+                sender.MinesLeftLabel.Text = $"Poke Balls: {sender.Game.FieldLevels[sender.Game.Level].Pokemon - FlaggedSquares.Count()}";
                 if (FlaggedSquares.Count() == sender.Game.FieldLevels[sender.Game.Level].Pokemon)
                 {
                     bool win = true;
@@ -111,12 +111,16 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 clickedElement.Content = img;
                 FontWeight = FontWeights.Bold;
                 FlaggedSquares = Field.Squares.Where(square => square.Status == SquareStatus.Flagged).ToList();
-                sender.MinesLeftLabel.Text = $"{sender.Game.FieldLevels[sender.Game.Level].Pokemon - FlaggedSquares.Count()}";
+                sender.MinesLeftLabel.Text = $"Poke Balls: {sender.Game.FieldLevels[sender.Game.Level].Pokemon - FlaggedSquares.Count()}";
             }
-            else if(Status == SquareStatus.Question)
+            else if (Status == SquareStatus.Question)
             {
                 Status = SquareStatus.Open;
                 Content = "";
+                if (Field.Squares.Where(s => s.Pokemon != null && s.Status == SquareStatus.Flagged).Count() == sender.Game.FieldLevels[sender.Game.Level].Pokemon)
+                {
+                    sender.showLevelWinFlyOut();
+                }
             }
 
         }
@@ -126,6 +130,11 @@ namespace PokemonSweeperMasterUWP.Game.Field
             if (Status == SquareStatus.Open)
             {
                 SwipeSquare(window);
+                if (Field.ClearedSquares + window.Game.FieldLevels[window.Game.Level].Pokemon ==
+                    (window.Game.FieldLevels[window.Game.Level].Rows * window.Game.FieldLevels[window.Game.Level].Columns))
+                {
+                    window.showLevelWinFlyOut();
+                }
             }
         }
 
