@@ -112,7 +112,7 @@ namespace PokemonSweeperMasterUWP
                 dialog.nextLevelPanelButton.Visibility = Visibility.Collapsed;
             }
 
-            await dialog.winConentDialog.ShowAsync();
+            await dialog.winContentDialog.ShowAsync();
 
             if (dialog.Result == "next")
             {
