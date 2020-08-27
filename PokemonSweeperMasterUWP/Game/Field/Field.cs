@@ -14,7 +14,6 @@ namespace PokemonSweeperMasterUWP.Game.Field
     public class Field
     {
         private readonly Random Random = new Random();
-        public Stopwatch Timer;
 
         public Field(int rows, int columns, int nrOfPokemon, MainPage window)
         {
@@ -68,7 +67,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
                     {
 
                         //Cheat Mode - Changes Color of Squares Containting Mines
-                        Squares[Squares.Count - 1].Background = new SolidColorBrush(Colors.Red);
+                        //Squares[Squares.Count - 1].Background = new SolidColorBrush(Colors.Red);
 
                         Squares[Squares.Count - 1].Pokemon = new Pokemon.Pokemon
                         {

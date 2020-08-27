@@ -82,11 +82,10 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 img.Source = bitImage;
 
                 clickedElement.Content = img;
-                //Content = new Image { Source = new BitmapImage(new Uri(@"/Game/images/pokeball.png", UriKind.Relative)) };
 
                 FlaggedSquares = Field.Squares.Where(square => square.Status == SquareStatus.Flagged).ToList();
                 sender.MinesLeftLabel.Text = $"Poke Balls: {sender.Game.FieldLevels[sender.Game.Level].Pokemon - FlaggedSquares.Count()}";
-                if (FlaggedSquares.Count() == sender.Game.FieldLevels[sender.Game.Level].Pokemon)
+                if (FlaggedSquares.Count() == sender.Game.FieldLevels[sender.Game.Level].Pokemon && Field.Squares.Where(s => s.Status == SquareStatus.Question).Count() == 0)
                 {
                     bool win = true;
                     foreach (var flaggedSquare in FlaggedSquares)
@@ -117,7 +116,7 @@ namespace PokemonSweeperMasterUWP.Game.Field
             {
                 Status = SquareStatus.Open;
                 Content = "";
-                if (Field.Squares.Where(s => s.Pokemon != null && s.Status == SquareStatus.Flagged).Count() == sender.Game.FieldLevels[sender.Game.Level].Pokemon)
+                if (Field.Squares.Where(s => s.Pokemon != null && s.Status == SquareStatus.Flagged).Count() == sender.Game.FieldLevels[sender.Game.Level].Pokemon && Field.Squares.Where(s => s.Status == SquareStatus.Question).Count() == 0)
                 {
                     sender.showLevelWinFlyOut();
                 }
@@ -165,10 +164,6 @@ namespace PokemonSweeperMasterUWP.Game.Field
                 BorderBrush = new SolidColorBrush(Colors.Black);
                 BorderThickness = new Thickness(1);
                 Status = SquareStatus.Cleared;
-                foreach (var OtherSquare in (Field.Squares.Where
-                    (s => (s.Row >= Row - 1) && (s.Row <= Row + 1) &&
-                          (s.Column >= Column - 1) && (s.Column <= Column + 1) && (s.Status == SquareStatus.Open))
-                    .ToList()));
                 foreach (var OtherSquare in (Field.Squares.Where
                     (s => (s.Row >= Row - 1) && (s.Row <= Row + 1) &&
                           (s.Column >= Column - 1) && (s.Column <= Column + 1) && (s.Status == SquareStatus.Open))

@@ -42,14 +42,6 @@
                 <x:String>English</x:String>
                 <x:String>German</x:String>
             </ComboBox>
-            <Button Name="SaveChangesButton"
-                    FontSize="30"
-                    Content="Save Changes"
-                    VerticalAlignment="Top"
-                    Height="80" Width="205"
-                    Padding="5"
-                    HorizontalAlignment="Center"
-                    Click="SaveChangesButton_Click"/>
         </StackPanel>
 
     </Grid>

@@ -32,7 +32,6 @@ namespace PokemonSweeperMasterUWP
     public sealed partial class MainPage : Page
     {
         public PokeSweepGame Game { get; set; }
-        public bool gameEnded = false;
 
         public MainPage()
         {
@@ -57,25 +56,20 @@ namespace PokemonSweeperMasterUWP
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            gameEnded = false;
             Game = new PokeSweepGame((int)e.Parameter);
             Game.NewField(this);
         }
 
         public void MineSquare_MouseRightButtonDown(object sender, RightTappedRoutedEventArgs e)
         {
-            if (!gameEnded)
-            {
                 ((Square)sender).RightButton(this, (Square)sender);
-            }
+            
         }
 
         public void MineSquare_Click(object sender, TappedRoutedEventArgs e)
         {
-            if (!gameEnded)
-            {
                 ((Square)sender).LeftButton(this);
-            }
+            
         }
 
         #region Flyouts

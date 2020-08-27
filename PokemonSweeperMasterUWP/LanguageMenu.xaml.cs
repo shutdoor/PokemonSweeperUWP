@@ -42,14 +42,8 @@ namespace PokemonSweeperMasterUWP
             }
             BackButton.Content = resource.GetString("BackButton.Content");
             LanguageSelection.Text = resource.GetString("LanguageSelection.Text");
-            SaveChangesButton.Content = resource.GetString("SaveChangesButton.Content");
         }
 
-        private void SaveChangesButton_Click(object sender, RoutedEventArgs e)
-        {
-            //TODO add language selection and translation functionality here
-           
-        }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
